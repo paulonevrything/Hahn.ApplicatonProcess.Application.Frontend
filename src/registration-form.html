@@ -1,26 +1,54 @@
 <template>
-    <form submit.delegate="submit()" reset.delegate="reset()" id="validationTest">
-  
-      <!-- Prepend 'session.record' to each value.bind property to use the injected properties -->
-      <div class="form-group">
-        <label class="control-label" for="first">First Name</label>
-        <input type="text" class="form-control" id="first" placeholder="First Name"
-               value.bind="session.record.firstName & validate">
-      </div>
-  
-      <div class="form-group">
-        <label class="control-label" for="last">Last Name</label>
-        <input type="text" class="form-control" id="last" placeholder="Last Name"
-               value.bind="session.record.lastName & validate">
-      </div>
-  
-      <div class="form-group">
-        <label class="control-label" for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Email"
-               value.bind="session.record.email & validate">
-      </div>
-  
-      <button type="submit" class="btn btn-primary">Submit</button>
-      <button type="reset" class="btn btn-link text-muted">Reset</button>
-    </form>
-  </template>
+  <form submit.delegate="submit()" reset.delegate="reset()" id="validationTest">
+
+    <h1>Applicant Form</h1>
+    <div class="form-group">
+      <label class="control-label" for="name">Name</label>
+      <input type="text" class="form-control" id="first" placeholder="Name"
+        value.bind="session.applicant.name & validate">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="familyName">Family Name</label>
+      <input type="text" class="form-control" id="last" placeholder="Family Name"
+        value.bind="session.applicant.familyName & validate">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="address">Address</label>
+      <input type="text" class="form-control" id="address" placeholder="Address"
+        value.bind="session.applicant.address & validate">
+      <span class="error"></span>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="countryOfOrigin">Country of Origin</label>
+      <input type="text" class="form-control" id="countryOfOrigin" placeholder="Country of Origin"
+        value.bind="session.applicant.countryOfOrigin & validate">
+      <span class="error"></span>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="email">Email Address</label>
+      <input type="email" class="form-control" id="email" placeholder="Email"
+        value.bind="session.applicant.email & validate">
+      <span class="error"></span>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="age">Age</label>
+      <input type="number" class="form-control" id="age" placeholder="Age"
+        value.bind="session.applicant.age & validate">
+      <span class="error"></span>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="hired">Hired</label>
+      <input type="checkbox" class="form-control" id="hired" value.bind="session.applicant.hired & validate">
+      <span class="error"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-link text-muted">Reset</button>
+  </form>
+</template>
