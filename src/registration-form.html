@@ -1,0 +1,26 @@
+<template>
+    <form submit.delegate="submit()" reset.delegate="reset()" id="validationTest">
+  
+      <!-- Prepend 'session.record' to each value.bind property to use the injected properties -->
+      <div class="form-group">
+        <label class="control-label" for="first">First Name</label>
+        <input type="text" class="form-control" id="first" placeholder="First Name"
+               value.bind="session.record.firstName & validate">
+      </div>
+  
+      <div class="form-group">
+        <label class="control-label" for="last">Last Name</label>
+        <input type="text" class="form-control" id="last" placeholder="Last Name"
+               value.bind="session.record.lastName & validate">
+      </div>
+  
+      <div class="form-group">
+        <label class="control-label" for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Email"
+               value.bind="session.record.email & validate">
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="reset" class="btn btn-link text-muted">Reset</button>
+    </form>
+  </template>
