@@ -15,13 +15,6 @@ export class RegistrationForm {
     this.session = session;
 
   }
-  
-  public bind() {
-    ValidationRules
-      .ensure("firstName").required()
-      .ensure("lastName").required().withMessage("My custom error message")
-      .on(this.session);
-  }
 
   submit() {
     this.session.bind();
