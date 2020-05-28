@@ -5,7 +5,7 @@ import {
 } from 'aurelia-validation';
 
 export class BootstrapFormRenderer {
-
+  
   render(instruction) {
     for (let { error, elements } of instruction.unrender) {
       for (let element of elements) {
@@ -25,7 +25,6 @@ export class BootstrapFormRenderer {
     if (!formGroup) {
       return;
     }
-    
 
     // add the has-error class to the enclosing form-group div
     formGroup.classList.add('has-error');
